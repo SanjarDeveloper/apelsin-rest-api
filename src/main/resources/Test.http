@@ -1,0 +1,269 @@
+POST http://localhost:80/customer
+Content-Type: application/json
+
+{
+  "name": "Someone",
+  "country": "UZB",
+  "address": "Some Address",
+  "phone": "+998982292292",
+  "active": true
+}
+###
+POST http://localhost:80/customer
+Content-Type: application/json
+
+{
+  "name": "Someone2",
+  "country": "UZB",
+  "address": "Some Address2",
+  "phone": "+998909090802",
+  "active": true
+}
+###
+GET http://localhost:80/customer
+
+###
+GET http://localhost:80/customer/2
+###
+PUT http://localhost:80/customer/4
+Content-Type: application/json
+
+{
+  "name": "Someone2",
+  "country": "UZB",
+  "address": "Some Address2",
+  "phone": "+998909090802",
+  "active": false
+}
+###
+GET http://localhost:80/customer
+
+###
+DELETE http://localhost:80/customer/3
+
+###
+GET http://localhost:80/customer
+
+###
+POST http://localhost:80/order
+Content-Type: application/json
+
+{
+  "date": "2022-01-10",
+  "customer_id": 4,
+  "active": true
+}
+
+###
+POST http://localhost:80/order
+Content-Type: application/json
+
+{
+  "date": "2022-02-13",
+  "customer_id": 3,
+  "active": true
+}
+###
+GET http://localhost:80/order
+
+###
+GET http://localhost:80/order/1
+
+###
+PUT http://localhost:80/order/1
+Content-Type: application/json
+
+{
+  "date": "2021-10-10",
+  "customer_id": 4,
+  "active": false
+}
+
+###
+DELETE http://localhost:80/order/2
+
+###
+GET http://localhost:80/category?product_id=1
+
+###
+POST http://localhost:80/category
+Content-Type: application/json
+
+{
+  "name": "soma category",
+  "active": true
+}
+
+###
+POST http://localhost:80/category
+Content-Type: application/json
+
+{
+  "name": "soma category1",
+  "active": false
+}
+
+###
+GET http://localhost:80/category/list
+
+###
+GET http://localhost:80/category/1
+
+###
+PUT http://localhost:80/category/1
+Content-Type:application/json
+
+{
+  "name": "some category",
+  "active": true
+}
+
+###
+DELETE http://localhost:80/category/1
+
+###
+POST http://localhost:80/product
+Content-Type: application/json
+
+{
+  "name": "product1",
+  "category_id": 1,
+  "description": "Something",
+  "price": 12121.12,
+  "photo": "some photo",
+  "active": true
+}
+
+###
+POST http://localhost:80/product
+Content-Type: application/json
+
+{
+  "name": "product2",
+  "category_id": 2,
+  "description": "Something2",
+  "price": 211221.12,
+  "photo": "some photo2",
+  "active": true
+}
+
+###
+GET http://localhost:80/product
+
+###
+GET http://localhost:80/product/1
+
+###
+PUT http://localhost:80/product/2
+Content-Type: application/json
+
+{
+  "name": "product2",
+  "category_id": 2,
+  "description": "Something2",
+  "price": 313131.31,
+  "photo": "some photo2",
+  "active": true
+}
+
+###
+DELETE http://localhost:80/product/2
+
+###
+GET http://localhost:80/category?product_id=2
+
+
+###
+POST http://localhost:80/payment
+Content-Type: application/json
+
+{
+  "timestamp": "2022-01-01 12:01:58",
+  "amount": 12000,
+  "invoice_id": 1
+}
+
+###
+GET http://localhost:80/product/list
+
+###
+GET  http://localhost:80/product/details?product_id=2
+
+###
+POST http://localhost:80/order
+Content-Type: application/json
+
+{
+  "customer_id": 1,
+  "product_id": 2,
+  "quantity": 10
+}
+
+###
+GET http://localhost:80/order/details?order_id=2
+
+###
+POST http://localhost:80/payment
+Content-Type: application/json
+
+{
+  "invoice_id": 3
+}
+
+###
+POST http://localhost:80/order
+Content-Type: application/json
+
+{
+  "customer_id": 1,
+  "product_id":1,
+  "quantity": 10
+}
+###
+POST http://localhost:80/payment
+Content-Type: application/json
+
+{
+  "invoice_id": 5
+}
+
+###
+GET http://localhost:80/category/list
+
+###
+GET http://localhost:80/category?product_id=1
+
+###
+POST http://localhost:80/order
+Content-Type: application/json
+
+{
+  "customer_id": 2,
+  "product_id": 1,
+  "quantity": 10,
+  "active": true
+}
+
+###
+GET http://localhost:80/order/details?order_id=3
+
+###
+POST http://localhost:80/payment
+Content-Type: application/json
+
+{
+  "invoice_id": 7,
+  "amount": 9000
+}
+
+###
+GET http://localhost:80/payment/details?id=4
+
+###
+GET http://localhost:80/expired_invoices
+
+###
+GET http://localhost:80/wrong_date_invoices
+
+###
+
